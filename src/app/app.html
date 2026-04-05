@@ -1,12 +1,15 @@
 <main class="main">
   <div class="headline">
-    Profound Knowledge Blog
-    <div class="links"> 
-      <a routerLink="/" routerLinkActive="active">Home</a>
-      <a routerLink="/posts" routerLinkActive="active">Posts</a>
-      <a routerLink="/settings" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Settings</a>
-      <a routerLink="/settings/profile">Profile</a>
+    {{ 'BLOG_NAME' | t }}
+    <div class="links">
+      <a routerLink="/" routerLinkActive="active">{{ 'HOME' | t }}</a>
+      <a routerLink="/posts" routerLinkActive="active">{{ 'POSTS' | t }}</a>
+      <a routerLink="/settings" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        {{ 'SETTINGS' | t }}
+      </a>
+      <a routerLink="/settings/profile">{{ "PROFILE" | t }}</a>
       <a routerLink="/posts/100" routerLinkActive="active">Posts/100</a>
+      <button (click)="changeLang()">{{ "CHANGE_LANGUAGE" | t }}</button>
     </div>
   </div>
   <!-- {{ title() }} -->
