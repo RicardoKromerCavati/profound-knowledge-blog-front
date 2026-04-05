@@ -1,4 +1,13 @@
 {
-    "WELCOME_TO_THE_BLOG": "Welcome to Profound Knowledge Blog!",
-    "GO_TO_POSTS": "Go to posts"
+    "BLOG_NAME": "Profound Knowledge Blog",
+    "CHANGE_LANGUAGE": "Change language",
+    "GO_HOME": "Go home",
+    "GO_TO_POSTS": "Go to posts",
+    "HOME": "Home",
+    "NOT_FOUND_DESCRIPTION": "“Not all who wander are lost... but this page definitely is.”",
+    "NOT_FOUND_MESSAGE": "404 - Not found",
+    "POSTS": "Posts",
+    "PROFILE": "Profile",
+    "SETTINGS": "Settings",
+    "WELCOME_TO_THE_BLOG": "Welcome to Profound Knowledge Blog!"
 }

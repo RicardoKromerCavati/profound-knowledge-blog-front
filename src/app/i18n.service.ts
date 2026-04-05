@@ -1,5 +1,4 @@
 import { Injectable, signal } from '@angular/core';
-import { single } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'

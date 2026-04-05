@@ -12,7 +12,6 @@ import { TranslatePipe } from '../../translate.pipe';
 export class HomeComponent {
   router = inject(Router);
 
-
   goToPostsPage(): void {
     // this.router.navigateByUrl('/posts');
     this.router.navigate(['posts']);
