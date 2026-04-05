@@ -33,6 +33,19 @@
   font-size: medium;
 }
 
+.headline .links button {
+  color: inherit;
+  background-color: #537D96;
+  text-decoration: none;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  font-weight: normal;
+  font-size: medium;
+}
+
 .links {
   padding-left: 10px;
   padding-right: 10px;
