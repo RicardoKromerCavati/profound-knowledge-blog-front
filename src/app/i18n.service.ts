@@ -20,7 +20,7 @@ export class I18nService {
     }
 
     t(key: string): string {
-        return this.translations()[key] || 'key';
+        return this.translations()[key] || key;
     }
 
     get lang() {
