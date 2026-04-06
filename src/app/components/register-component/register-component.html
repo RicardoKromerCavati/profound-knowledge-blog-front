@@ -1,0 +1,15 @@
+<h1>{{ 'REGISTER' | t }}</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+        <input type="text" placeholder="{{ 'USERNAME' | t }}" formControlName="username"/>
+    </div>
+    <div>
+        <input type="text" placeholder="{{ 'EMAIL' | t }}" formControlName="email"/>
+    </div>
+    <div>
+        <input type="password" placeholder="{{ 'PASSWORD' | t }}" formControlName="password"/>
+    </div>
+    <div>
+        <button type="submit">{{ 'SIGN_UP' | t }}</button>
+    </div>
+</form>
