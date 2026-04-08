@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { UserInterface } from '../../user.interface';
 import { AuthService } from '../../auth.service';
 import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
+import { UserLoginRequest } from '../../core/api/authentication/user_login_request.contratct';
 
 @Component({
   selector: 'app-login-component',
@@ -26,7 +28,11 @@ export class LoginComponent {
 
   onSubmit(): void {
     const rawValue = this.form.getRawValue();
-    this.http.post<UserInterface>('https://restful-booker.herokuapp.com/auth', { username: rawValue.email, password: rawValue.password })
+    const request: UserLoginRequest = {
+      username: rawValue.email,
+      password: rawValue.password
+    };
+    this.http.post<UserInterface>(`${environment.backendUrl}/Authentication/login`, request)
       .subscribe(response => {
         console.log('response', response);
         console.log('token', response.token);
