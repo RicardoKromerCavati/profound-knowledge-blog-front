@@ -16,7 +16,7 @@
       </div>
       <div *ngIf="authService.currentUserSignal()">
         {{ authService.currentUserSignal()?.username }}
-        <a routerLinkActive="active">{{ 'LOGOUT' | t }}</a>
+        <button (click)="logout()">{{ 'LOGOUT' | t }}</button>
       </div>
     </div>
   </div>

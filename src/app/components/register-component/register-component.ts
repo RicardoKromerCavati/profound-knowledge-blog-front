@@ -2,9 +2,11 @@ import { Component, inject } from '@angular/core';
 import { TranslatePipe } from '../../translate.pipe';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { UserInterface } from '../../user.interface';
 import { AuthService } from '../../auth.service';
 import { Router } from '@angular/router';
+import { UserRegisterRequest } from '../../core/api/register/user.register.request';
+import { environment } from '../../../environments/environment';
+import { UserSessionResponse } from '../../core/api/session/user.session.response';
 
 @Component({
   selector: 'app-register-component',
@@ -26,15 +28,24 @@ export class RegisterComponent {
   });
 
   onSubmit(): void {
-    const rawValue = this.form.getRawValue();
-    this.http.post<UserInterface>('https://restful-booker.herokuapp.com/auth', { username: rawValue.username, password: rawValue.password })
-    .subscribe(response => {
-      console.log('response', response);
-      console.log('token', response.token);
-      response.username = rawValue.username;
-      localStorage.setItem('token', response.token);
-      this.authService.currentUserSignal.set(response);
-      this.router.navigateByUrl('/');
-    });
+    const formRawValues = this.form.getRawValue();
+
+    const userRegisterRequest: UserRegisterRequest = {
+      email: formRawValues.email,
+      password: formRawValues.password,
+      username: formRawValues.username
+    };
+
+    this.http.post(`${environment.backendUrl}/register`, userRegisterRequest)
+      .subscribe({
+        next: () => {
+          alert('Registro feito com sucesso!');
+          this.router.navigateByUrl('/login');
+        },
+        error: (err) => {
+          console.log(err);
+          alert('Erro ao fazer o registro!');
+        }
+      });
   }
 }

@@ -8,7 +8,7 @@ export class I18nService {
     private currentLang = signal('en');
 
     async load(lang: string) {
-        const localizationFilePath = `../assets/i18n/${lang}.json`;        
+        const localizationFilePath = `../assets/i18n/${lang}.json`;
         const response = await fetch(localizationFilePath);
         const json = await response.json();
 
