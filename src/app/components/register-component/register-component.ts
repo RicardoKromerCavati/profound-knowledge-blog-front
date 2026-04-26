@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { UserRegisterRequest } from '../../core/api/register/user.register.request';
 import { environment } from '../../../environments/environment';
 import { UserSessionResponse } from '../../core/api/session/user.session.response';
+import PasswordValidator from '../../shared/validators/password-validator.validator';
 
 @Component({
   selector: 'app-register-component',
@@ -16,15 +17,16 @@ import { UserSessionResponse } from '../../core/api/session/user.session.respons
   standalone: true
 })
 export class RegisterComponent {
-  fb = inject(FormBuilder);
+  formBuilder = inject(FormBuilder);
   http = inject(HttpClient);
   authService = inject(AuthService);
   router = inject(Router);
 
-  form = this.fb.nonNullable.group({
+  form = this.formBuilder.nonNullable.group({
     username: ['', Validators.required],
     email: ['', Validators.required],
-    password: ['', Validators.required],
+    password: ['', [Validators.required, PasswordValidator.passwordStrength]],
+    confirmPassword: ['', [Validators.required, PasswordValidator.matchPassword]],
   });
 
   onSubmit(): void {

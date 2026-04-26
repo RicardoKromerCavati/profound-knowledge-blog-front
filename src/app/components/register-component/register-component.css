@@ -1,0 +1,13 @@
+.small-error {
+    color: red;
+    font-size: small;
+}
+
+.small-success {
+    color: green;
+    font-size: small;
+}
+
+.input-div {
+    margin-top: 10px;
+}
