@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { UserRegisterRequest } from '../../core/api/register/user.register.request';
 import PasswordValidator from '../../shared/validators/password-validator.validator';
 import { finalize } from 'rxjs';
-import { RegisterService } from '../../core/api/services/register.service';
+import { RegisterService } from '../../core/api/register/register.service';
 import { UserRegisterResponse } from '../../core/api/register/user.register.response';
 import { HttpErrorResponse } from '@angular/common/http';
 
