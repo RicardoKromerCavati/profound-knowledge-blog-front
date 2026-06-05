@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { TranslatePipe } from '../../../translate.pipe';
+import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserLoginRequest } from '../../../core/api/authentication/user.login.request';

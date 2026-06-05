@@ -1,8 +1,8 @@
-import { Component, inject, NgModule, OnInit, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet, Routes } from '@angular/router';
-import { I18nService } from './i18n.service';
-import { TranslatePipe } from '../app/translate.pipe';
-import { AuthService } from './auth.service';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { I18nService } from './core/services/i18n.service';
+import { TranslatePipe } from './shared/pipes/translate.pipe';
+import { AuthService } from './core/api/authentication/auth.service';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
