@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home';
 import { PostComponent } from './components/post-component/post-component';
-import { PostListComponent } from './components/post-list-component/post-list-component';
 import { NotFoundComponent } from './components/not-found-component/not-found-component';
 import { SettingsComponent } from './components/settings-component/settings-component';
-import { Component } from '@angular/core';
+import { LoginComponent } from './features/login/login-component/login-component';
 import { SettingsProfileComponent } from './components/settings-profile-component/settings-profile-component';
-import { pageResolver } from './data.resolver';
+import { pageResolver } from './core/services/data.resolver';
+import { RegisterComponent } from './features/register/register-component/register-component';
 
 export const routes: Routes = [
     {
@@ -45,6 +45,14 @@ export const routes: Routes = [
         redirectTo: route => {
             return `/posts/${route.params['postId']}`
         }
+    },
+    {
+        path: 'login',
+        component: LoginComponent
+    },
+    {
+        path: 'register',
+        component: RegisterComponent
     },
     {
         path: '**',

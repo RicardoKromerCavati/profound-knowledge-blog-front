@@ -1,0 +1,84 @@
+<h1>{{ 'REGISTER' | t }}</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="input-div">
+        <input type="text" placeholder="{{ 'USERNAME' | t }}" formControlName="username" />
+    </div>
+    <div class="input-div">
+        <input type="text" placeholder="{{ 'EMAIL' | t }}" formControlName="email" />
+    </div>
+    <div class="input-div">
+        <input type="password" placeholder="{{ 'PASSWORD' | t }}" formControlName="password" />
+    </div>
+
+    @if ((form.get('password')?.value?.length ?? 0) > 0) {
+    <!-- Validation div -->
+    <div>
+        <!-- Upper case validation -->
+        <div>
+            @if (form.get('password')?.errors?.['hasUpperCase']){
+            <small class="small-error">{{ 'UPPERCASE_REQUIRED' | t}}</small>
+            }
+            @else{
+            <small class="small-success">{{ 'UPPERCASE_SUCCESS' | t}}</small>
+            }
+        </div>
+        <!-- Lower case validation -->
+        <div>
+            @if (form.get('password')?.errors?.['hasLowerCase']){
+            <small class="small-error">{{ 'LOWERCASE_REQUIRED' | t}}</small>
+            }
+            @else{
+            <small class="small-success">{{ 'LOWERCASE_SUCCESS' | t}}</small>
+            }
+        </div>
+        <!-- Number validation -->
+        <div>
+            @if (form.get('password')?.errors?.['hasNumericChar']){
+            <small class="small-error">{{ 'NUMBER_REQUIRED' | t}}</small>
+            }
+            @else{
+            <small class="small-success">{{ 'NUMBER_SUCCESS' | t}}</small>
+            }
+        </div>
+        <!-- Special characters validation -->
+        <div>
+            @if (form.get('password')?.errors?.['hasSpecialCharacters']){
+            <small class="small-error">{{ 'SPECIAL_CHAR_REQUIRED' | t}}</small>
+            }
+            @else{
+            <small class="small-success">{{ 'SPECIAL_CHAR_SUCCESS' | t}}</small>
+            }
+        </div>
+        <!-- Length validation -->
+        <div>
+            @if (form.get('password')?.errors?.['hasMinimumLength']){
+            <small class="small-error">{{ 'LENGTH_REQUIRED' | t}}</small>
+            }
+            @else{
+            <small class="small-success">{{ 'LENGTH_SUCCESS' | t}}</small>
+            }
+        </div>
+    </div>
+    }
+
+    <div class="input-div">
+        <input type="password" placeholder="{{ 'CONFIRM_PASSWORD' | t }}" formControlName="confirmPassword" />
+    </div>
+    <!-- Passwords match validation -->
+    <div>
+        @if ((form.get('confirmPassword')?.value?.length ?? 0) > 0) {
+        <div>
+            @if (form.get('confirmPassword')?.errors?.['mismatch']){
+            <small class="small-error">{{ 'PASSWORDS_DO_NOT_MATCH' | t }}</small>
+            }
+            @else{
+            <small class="small-success">{{ 'PASSWORDS_MATCH' | t }}</small>
+            }
+        </div>
+        }
+    </div>
+
+    <div class="input-div">
+        <button type="submit" [disabled]="form.invalid || isLoading()">{{ isLoading() ? '...' : ('SIGN_UP' | t) }}</button>
+    </div>
+</form>

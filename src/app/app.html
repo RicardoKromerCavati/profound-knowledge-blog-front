@@ -10,6 +10,16 @@
       <a routerLink="/settings/profile">{{ "PROFILE" | t }}</a>
       <a routerLink="/posts/100" routerLinkActive="active">Posts/100</a>
       <button (click)="changeLang()">{{ "CHANGE_LANGUAGE" | t }}</button>
+      <div *ngIf="authService.currentUserSignal() === null">
+        <div class="nav-links">
+          <a routerLink="/login" routerLinkActive="active">{{ 'LOGIN' | t }}</a>
+          <a routerLink="/register" routerLinkActive="active">{{ 'REGISTER' | t }}</a>
+        </div>
+      </div>
+      <div *ngIf="authService.currentUserSignal()">
+        {{ authService.currentUserSignal()?.username }}
+        <button (click)="logout()">{{ 'LOGOUT' | t }}</button>
+      </div>
     </div>
   </div>
   <!-- {{ title() }} -->
