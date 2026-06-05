@@ -1,14 +1,12 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home';
 import { PostComponent } from './components/post-component/post-component';
-import { PostListComponent } from './components/post-list-component/post-list-component';
 import { NotFoundComponent } from './components/not-found-component/not-found-component';
 import { SettingsComponent } from './components/settings-component/settings-component';
-import { Component } from '@angular/core';
-import { LoginComponent } from './components/login-component/login-component';
+import { LoginComponent } from './features/login/login-component/login-component';
 import { SettingsProfileComponent } from './components/settings-profile-component/settings-profile-component';
 import { pageResolver } from './data.resolver';
-import { RegisterComponent } from './components/register-component/register-component';
+import { RegisterComponent } from './features/register/register-component/register-component';
 
 export const routes: Routes = [
     {

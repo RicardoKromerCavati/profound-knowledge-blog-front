@@ -1,11 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
-import { TranslatePipe } from '../../translate.pipe';
+import { TranslatePipe } from '../../../translate.pipe';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserLoginRequest } from '../../core/api/authentication/user.login.request';
-import LoginValidator from '../../shared/validators/login-validator.validator';
+import { UserLoginRequest } from '../../../core/api/authentication/user.login.request';
+import { LoginValidator } from '../login-validator.validator';
 import { finalize } from 'rxjs';
-import { LoginService } from '../../core/api/authentication/login.service';
+import { LoginService } from '../../../core/api/authentication/login.service';
 
 @Component({
   selector: 'app-login-component',

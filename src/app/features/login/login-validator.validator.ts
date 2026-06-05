@@ -21,9 +21,7 @@ function isPasswordFilled(control: AbstractControl): ValidationErrors | null {
     return null;
 }
 
-const LoginValidator = {
+export const LoginValidator = {
     isEmailFilled,
     isPasswordFilled
-};
-
-export default LoginValidator;
+} as const;

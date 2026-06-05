@@ -1,12 +1,12 @@
 import { Component, inject, signal } from '@angular/core';
-import { TranslatePipe } from '../../translate.pipe';
+import { TranslatePipe } from '../../../translate.pipe';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserRegisterRequest } from '../../core/api/register/user.register.request';
-import PasswordValidator from '../../shared/validators/password-validator.validator';
+import { UserRegisterRequest } from '../../../core/api/register/user.register.request';
+import { PasswordValidator } from '../password-validator.validator';
 import { finalize } from 'rxjs';
-import { RegisterService } from '../../core/api/register/register.service';
-import { UserRegisterResponse } from '../../core/api/register/user.register.response';
+import { RegisterService } from '../../../core/api/register/register.service';
+import { UserRegisterResponse } from '../../../core/api/register/user.register.response';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({

@@ -34,9 +34,7 @@ function matchPassword(control: AbstractControl): ValidationErrors | null {
     return confirmPassword === password ? null : { mismatch: true };
 }
 
-const PasswordValidator = {
+export const PasswordValidator = {
     passwordStrength,
     matchPassword
-};
-
-export default PasswordValidator;
+} as const;
