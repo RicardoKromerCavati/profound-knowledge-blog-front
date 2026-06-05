@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { UserLoginRequest } from '../../core/api/authentication/user.login.request';
 import LoginValidator from '../../shared/validators/login-validator.validator';
 import { finalize } from 'rxjs';
-import { LoginService } from '../../core/api/services/login.services';
+import { LoginService } from '../../core/api/services/login.service';
 
 @Component({
   selector: 'app-login-component',
