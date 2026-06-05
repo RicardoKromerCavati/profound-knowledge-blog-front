@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { TranslatePipe } from '../../translate.pipe';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -8,6 +8,7 @@ import { UserRegisterRequest } from '../../core/api/register/user.register.reque
 import { environment } from '../../../environments/environment';
 import { UserSessionResponse } from '../../core/api/session/user.session.response';
 import PasswordValidator from '../../shared/validators/password-validator.validator';
+import { finalize } from 'rxjs';
 
 @Component({
   selector: 'app-register-component',
@@ -29,6 +30,8 @@ export class RegisterComponent {
     confirmPassword: ['', [Validators.required, PasswordValidator.matchPassword]],
   });
 
+  isLoading = signal(false);
+
   onSubmit(): void {
     const formRawValues = this.form.getRawValue();
 
@@ -38,7 +41,10 @@ export class RegisterComponent {
       username: formRawValues.username
     };
 
+    this.isLoading.set(true);
+
     this.http.post(`${environment.backendUrl}/register`, userRegisterRequest)
+      .pipe(finalize(() => this.isLoading.set(false)))
       .subscribe({
         next: () => {
           alert('Registro feito com sucesso!');

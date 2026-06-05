@@ -1,12 +1,14 @@
 <h1>{{ 'LOGIN' | t }}</h1>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div>
-        <input type="text" placeholder="{{ 'EMAIL' | t }}" formControlName="email"/>
+    <div class="input-div">
+        <input type="text" placeholder="{{ 'EMAIL' | t }}" formControlName="email" />
     </div>
-    <div>
-        <input type="password" placeholder="{{ 'PASSWORD' | t }}" formControlName="password"/>
+    <div class="input-div">
+        <input type="password" placeholder="{{ 'PASSWORD' | t }}" formControlName="password" />
     </div>
-    <div>
-        <button type="submit">{{ 'SUBMIT' | t }}</button>
+    <div class="input-div">
+        <button type="submit" [disabled]="form.invalid || isLoading()">
+            {{ isLoading() ? '...' : ('LOGIN' | t) }}
+        </button>
     </div>
 </form>

@@ -19,7 +19,7 @@
     "PASSWORDS_MATCH": "✅ Passwords match",
     "POSTS": "Posts",
     "PROFILE": "Profile",
-    "REGISTER": "Registernode ",
+    "REGISTER": "Register",
     "SETTINGS": "Settings",
     "SIGN_UP": "Sign up",
     "SPECIAL_CHAR_REQUIRED": "🚫 Password needs to have at least one special character",
@@ -27,5 +27,6 @@
     "UPPERCASE_REQUIRED": "🚫 Password needs to have at least one upper case character",
     "UPPERCASE_SUCCESS": "✅ Has upper case character",
     "USERNAME": "Username",
-    "WELCOME_TO_THE_BLOG": "Welcome to Profound Knowledge Blog!"
+    "WELCOME_TO_THE_BLOG": "Welcome to Profound Knowledge Blog!",
+    "LOGIN": "Login"
 }

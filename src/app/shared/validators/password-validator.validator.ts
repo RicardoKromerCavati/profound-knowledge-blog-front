@@ -3,7 +3,6 @@ import { ValidationErrors } from "@angular/forms";
 
 function passwordStrength(control: AbstractControl): ValidationErrors | null {
     const password = control.value;
-    console.log(password);
 
     const hasUpperCase = /[A-Z]/.test(password);
     const hasLowerCase = /[a-z]/.test(password);

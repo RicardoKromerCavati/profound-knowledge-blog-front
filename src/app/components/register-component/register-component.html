@@ -79,6 +79,6 @@
     </div>
 
     <div class="input-div">
-        <button type="submit" [disabled]="form.invalid">{{ 'SIGN_UP' | t }}</button>
+        <button type="submit" [disabled]="form.invalid || isLoading()">{{ isLoading() ? '...' : ('SIGN_UP' | t) }}</button>
     </div>
 </form>

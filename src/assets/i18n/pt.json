@@ -27,5 +27,6 @@
     "UPPERCASE_REQUIRED": "🚫 A senha deve ter pelo menos uma letra maiúscula",
     "UPPERCASE_SUCCESS": "✅ Possui letra maiúscula",
     "USERNAME": "Nome de usuário",
-    "WELCOME_TO_THE_BLOG": "Bem vindo(a) ao blog Profound Knowledge!"
+    "WELCOME_TO_THE_BLOG": "Bem vindo(a) ao blog Profound Knowledge!",
+    "LOGIN": "Entrar"
 }
