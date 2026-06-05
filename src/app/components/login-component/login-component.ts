@@ -15,9 +15,9 @@ import { LoginService } from '../../core/api/services/login.service';
   standalone: true
 })
 export class LoginComponent {
-  fb = inject(FormBuilder);
-  router = inject(Router);
-  loginService = inject(LoginService);
+  private readonly fb = inject(FormBuilder);
+  private readonly router = inject(Router);
+  private readonly loginService = inject(LoginService);
 
   isLoading = signal(false);
 

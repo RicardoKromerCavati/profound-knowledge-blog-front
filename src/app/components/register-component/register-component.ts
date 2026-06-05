@@ -1,14 +1,13 @@
 import { Component, inject, signal } from '@angular/core';
 import { TranslatePipe } from '../../translate.pipe';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { AuthService } from '../../auth.service';
 import { Router } from '@angular/router';
 import { UserRegisterRequest } from '../../core/api/register/user.register.request';
-import { environment } from '../../../environments/environment';
-import { UserSessionResponse } from '../../core/api/session/user.session.response';
 import PasswordValidator from '../../shared/validators/password-validator.validator';
 import { finalize } from 'rxjs';
+import { RegisterService } from '../../core/api/services/register.service';
+import { UserRegisterResponse } from '../../core/api/register/user.register.response';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-register-component',
@@ -18,10 +17,9 @@ import { finalize } from 'rxjs';
   standalone: true
 })
 export class RegisterComponent {
-  formBuilder = inject(FormBuilder);
-  http = inject(HttpClient);
-  authService = inject(AuthService);
-  router = inject(Router);
+  private readonly formBuilder = inject(FormBuilder);
+  private readonly router = inject(Router);
+  private readonly registerService = inject(RegisterService);
 
   form = this.formBuilder.nonNullable.group({
     username: ['', Validators.required],
@@ -43,16 +41,15 @@ export class RegisterComponent {
 
     this.isLoading.set(true);
 
-    this.http.post(`${environment.backendUrl}/register`, userRegisterRequest)
+    this.registerService.register(userRegisterRequest)
       .pipe(finalize(() => this.isLoading.set(false)))
       .subscribe({
-        next: () => {
-          alert('Registro feito com sucesso!');
+        next: (response: UserRegisterResponse) => {
+          alert(response.message);
           this.router.navigateByUrl('/login');
         },
-        error: (err) => {
-          console.log(err);
-          alert('Erro ao fazer o registro!');
+        error: (err: HttpErrorResponse) => {
+          alert(err.error);
         }
       });
   }

@@ -10,8 +10,8 @@ import { AuthService } from '../../../auth.service';
   providedIn: 'root'
 })
 export class LoginService {
-  private http = inject(HttpClient);
-  authService = inject(AuthService);
+  private readonly http = inject(HttpClient);
+  private readonly authService = inject(AuthService);
 
   login(request: UserLoginRequest): Observable<UserLoginResponse> {
     return this.http.post<UserLoginResponse>(`${environment.backendUrl}/Authentication`, request)
