@@ -1,14 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { TranslatePipe } from '../../translate.pipe';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { AuthService } from '../../auth.service';
 import { Router } from '@angular/router';
-import { environment } from '../../../environments/environment';
 import { UserLoginRequest } from '../../core/api/authentication/user.login.request';
-import { UserLoginResponse } from '../../core/api/authentication/user.login.response';
 import LoginValidator from '../../shared/validators/login-validator.validator';
 import { finalize } from 'rxjs';
+import { LoginService } from '../../core/api/services/login.services';
 
 @Component({
   selector: 'app-login-component',
@@ -19,9 +16,8 @@ import { finalize } from 'rxjs';
 })
 export class LoginComponent {
   fb = inject(FormBuilder);
-  http = inject(HttpClient);
-  authService = inject(AuthService);
   router = inject(Router);
+  loginService = inject(LoginService);
 
   isLoading = signal(false);
 
@@ -40,19 +36,16 @@ export class LoginComponent {
 
     this.isLoading.set(true);
 
-    this.http.post<UserLoginResponse>(`${environment.backendUrl}/Authentication`, request)
+    this.loginService.login(request)
       .pipe(
         finalize(() => this.isLoading.set(false))
       )
       .subscribe({
-        next: (response) => {
-          localStorage.setItem('token', response.token);
-          this.authService.currentUserSignal.set(response);
+        next: () => {
           this.router.navigateByUrl('/');
         },
         error: (err) => {
-          console.error('Login failed', err);
-          alert('Invalid email or password'); // Or use a nice toast notification
+          alert(err.error);
         }
       });
   }
