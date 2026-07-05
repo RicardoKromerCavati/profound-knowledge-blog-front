@@ -1,0 +1,59 @@
+.container {
+    margin: 10px 10px 10px 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #537D96;
+    display: flex;
+}
+
+form {
+    width: 100%;
+    padding: 5px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 12px;
+    color: #F4F0E4;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.center-container button {
+    padding: 5px 50px;
+}
+
+.hidden-file-input {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    cursor: pointer;
+    color: #F4F0E4;
+    transition: background-color 0.2s;
+}
+
+.file-name {
+    margin-left: 10px;
+    font-size: 0.9rem;
+    color: #F4F0E4;
+}
+
+textarea {
+  resize: none;
+}
+textarea {
+  height: 15em;
+}

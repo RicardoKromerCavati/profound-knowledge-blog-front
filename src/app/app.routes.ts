@@ -7,6 +7,8 @@ import { LoginComponent } from './features/login/login-component/login-component
 import { SettingsProfileComponent } from './components/settings-profile-component/settings-profile-component';
 import { pageResolver } from './core/services/data.resolver';
 import { RegisterComponent } from './features/register/register-component/register-component';
+import { createComponent } from '@angular/core';
+import { CreateComponent } from './features/create/create';
 
 export const routes: Routes = [
     {
@@ -17,6 +19,10 @@ export const routes: Routes = [
     {
         path: 'home',
         component: HomeComponent
+    },
+    {
+        path: 'create',
+        component: CreateComponent
     },
     {
         path: 'posts',

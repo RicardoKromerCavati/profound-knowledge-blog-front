@@ -4,6 +4,7 @@
     <div class="links">
       <a routerLink="/" routerLinkActive="active">{{ 'HOME' | t }}</a>
       <a routerLink="/posts" routerLinkActive="active">{{ 'POSTS' | t }}</a>
+      <a routerLink="/create" routerLinkActive="active">{{ 'CREATE' | t }}</a>
       <a routerLink="/settings" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         {{ 'SETTINGS' | t }}
       </a>
@@ -11,6 +12,7 @@
       <a routerLink="/posts/100" routerLinkActive="active">Posts/100</a>
       <button (click)="changeLang()">{{ "CHANGE_LANGUAGE" | t }}</button>
       <div *ngIf="authService.currentUserSignal() === null">
+        <!-- TODO: Atualizar p não usar o ngIf -->
         <div class="nav-links">
           <a routerLink="/login" routerLinkActive="active">{{ 'LOGIN' | t }}</a>
           <a routerLink="/register" routerLinkActive="active">{{ 'REGISTER' | t }}</a>

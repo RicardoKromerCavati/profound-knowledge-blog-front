@@ -28,5 +28,13 @@
     "UPPERCASE_SUCCESS": "✅ Possui letra maiúscula",
     "USERNAME": "Nome de usuário",
     "WELCOME_TO_THE_BLOG": "Bem vindo(a) ao blog Profound Knowledge!",
-    "LOGIN": "Entrar"
+    "LOGIN": "Entrar",
+    "CREATE": "Criar",
+    "TITLE": "Título",
+    "CONTENT": "Conteúdo",
+    "YOU_MUST_CONNECT": "Você deve se conectar para usar essa funcionalidade",
+    "WRITE_CREATIVE_TITLE_HERE": "Escreva um título criativo aqui!",
+    "SELECT_IMAGE_FOR_POST": "Por favor selecione uma imagem para seu post...",
+    "SELECTED_FILE_LABEL" : "Arquivo selecionado",
+    "WRITE_YOUR_THOUGHTS_HERE": "Escreva seus pensamentos aqui..."
 }

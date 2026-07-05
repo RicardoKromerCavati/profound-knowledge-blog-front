@@ -28,5 +28,13 @@
     "UPPERCASE_SUCCESS": "✅ Has upper case character",
     "USERNAME": "Username",
     "WELCOME_TO_THE_BLOG": "Welcome to Profound Knowledge Blog!",
-    "LOGIN": "Login"
+    "LOGIN": "Login",
+    "CREATE": "Create",
+    "TITLE": "Title",
+    "CONTENT": "Content",
+    "YOU_MUST_CONNECT": "You must connect to use this functionality",
+    "WRITE_CREATIVE_TITLE_HERE": "Write a creative title here!",
+    "WRITE_YOUR_THOUGHTS_HERE": "Write your thoughts here...",
+    "SELECT_IMAGE_FOR_POST": "Please select an image for your post...",
+    "SELECTED_FILE_LABEL" : "Selected file"
 }
