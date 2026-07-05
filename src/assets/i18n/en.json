@@ -36,5 +36,7 @@
     "WRITE_CREATIVE_TITLE_HERE": "Write a creative title here!",
     "WRITE_YOUR_THOUGHTS_HERE": "Write your thoughts here...",
     "SELECT_IMAGE_FOR_POST": "Please select an image for your post...",
-    "SELECTED_FILE_LABEL" : "Selected file"
+    "SELECTED_FILE_LABEL" : "Selected file",
+    "INVALID_FILE_SELECTED": "Invalid file selected, the options are .jpg, .jpeg and .png",
+    "POST_CREATED_SUCCESSFULLY": "Post created successfully"
 }

@@ -36,5 +36,6 @@
     "WRITE_CREATIVE_TITLE_HERE": "Escreva um título criativo aqui!",
     "SELECT_IMAGE_FOR_POST": "Por favor selecione uma imagem para seu post...",
     "SELECTED_FILE_LABEL" : "Arquivo selecionado",
-    "WRITE_YOUR_THOUGHTS_HERE": "Escreva seus pensamentos aqui..."
+    "WRITE_YOUR_THOUGHTS_HERE": "Escreva seus pensamentos aqui...",
+    "POST_CREATED_SUCCESSFULLY": "Post criado com sucesso"
 }

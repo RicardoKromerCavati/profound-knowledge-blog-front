@@ -11,7 +11,7 @@ form {
     padding: 5px;
 }
 
-.form-group input, 
+.form-group input,
 .form-group textarea {
     width: 100%;
     box-sizing: border-box;
@@ -51,9 +51,16 @@ form {
     color: #F4F0E4;
 }
 
-textarea {
-  resize: none;
+.invalid-file {
+    margin-left: 10px;
+    font-size: 0.9rem;
+    color: red;
 }
+
 textarea {
-  height: 15em;
+    resize: none;
+}
+
+textarea {
+    height: 15em;
 }
